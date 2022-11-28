@@ -1,44 +1,93 @@
 <!DOCTYPE html>
 
 <html lang="en-US">
+
+  <!-- Header -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Caden Miller</title>
-    <link rel="stylesheet" href="https://unpkg.com/chota">
+    <link rel="stylesheet" href="css/chota.min.css">
   </head>
 
-  <!-- Style Options -->
+  <!-- Some customization to chota -->
   <style>
+    :root {
+      --bg-color: #ffffff;
+      --bg-secondary-color: #f3f3f6;
+      --color-primary: #14854F;
+      --color-lightGrey: #d2d6dd;
+      --color-grey: #747681;
+      --color-darkGrey: #3f4144;
+      --color-error: #d43939;
+      --color-success: #28bd14;
+      --grid-maxWidth: 120rem;
+      --grid-gutter: 2rem;
+      --font-size: 1.6rem;
+      --font-color: #333333;
+      --font-family-sans: sans-serif;
+      --font-family-mono: "Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    }
     .container {
       max-width: 720px;
     }
+    body > footer {
+      background-color: #fafafa;
+      padding: 4rem;
+    }
+
+    .container{
+      padding: 4rem;
+    }
   </style>
 
+  <!-- The websites body -->
   <body>
     <div class="container">
 
-      <!-- Header/Nav -->
-      <div class="nav">
-        <div class="nav-center">
-          <h1>Caden Miller </h1>
-        </div>
-      </div>
-      
-      <!-- Footer -->
-      <footer class="text-center">
+      <!-- Navigation bar to other parts of the website to be added -->
+      <nav class="tabs is-center">
+        <a href="">blog</a>
+        <a href="#hello">hello</a>
+        <a href="#latest">latest</a>
+        <a href="#about_me">about me</a>
+        <a href="#contacts">contacts</a>
+      </nav>
 
-          <label class="tag is-small">Contact: cadenmillerstudios@gmail.com</label>
-          <a class="button clear secondary" onclick="copyTextToClipboard('cadenmillerstudios@gmail.com')">Copy</a>
-          <br>
-          <label class="tag is-small">Github: https://github.com/cadenmiller</label>
-          <a class="button clear secondary" href="https://github.com/cadenmiller">Go</a>
-      </footer>
+      <!-- Hello! -->
+      <section id="hello" class="is-full-screen is-center text-justify">
+        <div class="row is-center text-center">
+          <div class="col">
+            <h3 class="text-center">I'm Caden Miller and I like to code and listen to music sometimes. Preferably I do systems style programming.</h3>
+          </div>
+          <div class="col">
+            <img class="is-rounded" src="./image/profile.jpeg" alt="A picture of me.">
+            <p class="tag text-justify text-center">Thats me.</p>       
+          </div>
+        </div>
+      </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="row is-center">
+        <label class="tag is-small">Contact: cadenmillerstudios@gmail.com</label>
+        <a class="button clear secondary" onclick="copyTextToClipboard('cadenmillerstudios@gmail.com')">Copy</a>
+      </div>
+      <div class="row is-center">
+        <label class="tag is-small">Github: https://github.com/cadenmiller</label>
+        <a class="button clear secondary" href="https://github.com/cadenmiller">Go</a>
+      </div>
+    </footer>
+
   </body>
 </html>
 
+
+<!-- Some simple embedded javascript into this html -->
 <script>
+
+  /* Copies specified text to the clipboard */
   async function copyTextToClipboard(text)
   {
     try {
