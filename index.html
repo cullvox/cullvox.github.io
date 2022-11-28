@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Caden Miller</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota">
+  </head>
+
+  <!-- Style Options -->
+  <style>
+    .container {
+      max-width: 720px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+
+      <!-- Header/Nav -->
+      <div class="nav">
+        <div class="nav-center">
+          <h1>Caden Miller </h1>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="text-center">
+
+          <label class="tag is-small">Contact: cadenmillerstudios@gmail.com</label>
+          <a class="button clear secondary" onclick="copyTextToClipboard('cadenmillerstudios@gmail.com')">Copy</a>
+          <br>
+          <label class="tag is-small">Github: https://github.com/cadenmiller</label>
+          <a class="button clear secondary" href="https://github.com/cadenmiller">Go</a>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<script>
+  async function copyTextToClipboard(text)
+  {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      alert('Error in copying text: ', err);
+    }
+  }
+</script>
