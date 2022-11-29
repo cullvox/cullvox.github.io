@@ -35,9 +35,11 @@
       background-color: #fafafa;
       padding: 4rem;
     }
-
     .container{
       padding: 4rem;
+    }
+    li {
+      list-style-type: none;
     }
   </style>
 
@@ -51,7 +53,7 @@
         <a href="#hello">hello</a>
         <a href="#latest">latest</a>
         <a href="#about_me">about me</a>
-        <a href="#contacts">contacts</a>
+        <a href="#contact">contact</a>
       </nav>
 
       <!-- Hello! -->
@@ -68,16 +70,60 @@
       </section>
     </div>
 
+    <!-- About Me -->
+    <section id="about_me" class="is-full-screen is-center">
+      <div>
+        <h1>about me</h1>
+        <p>
+          Age: <span id="age" class="tag">AGE</span><br>
+          Finger Size: <span  id="finger_size" class="tag">FINGER SIZE</span>
+        </p>
+        <div class="row">
+          <div class="col">
+            <h3>Education</h3>
+            <p>
+              <h4>Middle School and Highschool</h4>
+              <span class="bd-light">Gateway Regional High School<br>(2016-2022)</span><br>
+              <h4>Higher Education</h4>
+              <span class="bd-light">Rowan College of South Jersey<br>(2022-present)<br>For Computer Programming</span>
+            </p>
+          </div>
+          <div class="col">
+            <h3>Technologies</h3>
+            <p>
+              <h4>Languages</h4>
+              <span class="bd-light">C (89,99)</span><br>
+              <span class="bd-light">C++ (11,14,17)</span><br>
+              <span class="bd-light">C# (from Unity Engine)</span><br>
+              <span class="bd-light">Web Languages: HTML, CSS, Javascript</span><br>
+              <h4>Engines and Software</h4>
+              <span class="bd-light">Unreal Engine</span><br>
+              <span class="bd-light">Unity Engine</span><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact Me -->
+    <section id="contact" class="is-full-screen is-center">
+      <div>
+        <h1>contact me</h1>
+        <ul>
+          <li><p class="tag is-small">📧 email: <a class="secondary" onclick="copyTextToClipboard('cadenmillerstudios@gmail.com')">cadenmillerstudios@gmail.com (click copy)</a></p></li>
+          <li><p class="tag is-small">⌨️ github: <a class="secondary" href="https://github.com/cadenmiller">https://github.com/cadenmiller</a></p></li>
+          <li><p class="tag is-small">🧑‍💼 linked in: <a class="secondary" href="https://linkedin.com/in/cadenmiller">https://linkedin.com/in/cadenmiller</a></p></li>
+          <li><p class="tag is-small">📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.jpeg">https://instagram.com/cadenmiller.jpeg</a></p></li>
+          <li><p class="tag is-small">🆒 discord: <a class="secondary" onclick="copyTextToClipboard('cullvox#3452')">cullvox#3452 (click copy)</a></p></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="text-center">
-      <div class="row is-center">
-        <label class="tag is-small">Contact: cadenmillerstudios@gmail.com</label>
-        <a class="button clear secondary" onclick="copyTextToClipboard('cadenmillerstudios@gmail.com')">Copy</a>
-      </div>
-      <div class="row is-center">
-        <label class="tag is-small">Github: https://github.com/cadenmiller</label>
-        <a class="button clear secondary" href="https://github.com/cadenmiller">Go</a>
-      </div>
+      <p class="tag is-small">The content on this website is licensed under the <b>MIT License</b>. Find the source code <a href="https://github.com/cadenmiller/cadenmiller.dev">here!</a></p>
+      <p class="tag is-small">This website does not profile you.</p>
     </footer>
 
   </body>
@@ -95,5 +141,30 @@
     } catch (err) {
       alert('Error in copying text: ', err);
     }
+  }
+
+  window.onload = function() {
+    function timesince(timestamp) {
+      const date = new Date();
+      const nowTimestamp = date.getTime();
+      return nowTimestamp - timestamp;
+    }
+    function updateAge() {
+      const date = new Date();
+      const birthTimestamp = 1082525700 * 1000; 
+      const msInYear = 31536000000;
+      document.getElementById("age").innerHTML = timesince(birthTimestamp) / msInYear + " years";
+    }
+    function updateFingerSize() {
+      const date = new Date();
+      const birthTimestamp = 1082525700 * 1000;
+      const increasePerYear = 0.20310414;
+      const msInYear = 31536000000;
+      document.getElementById("finger_size").innerHTML = Math.round((timesince(birthTimestamp) / msInYear) * increasePerYear*100000000)/100000000 + " units";
+    }
+    updateAge();
+    updateFingerSize();
+    setInterval(updateAge, 100);
+    setInterval(updateFingerSize, 100);
   }
 </script>
