@@ -160,7 +160,7 @@
       const birthTimestamp = 1082525700 * 1000;
       const increasePerYear = 0.20310414;
       const msInYear = 31536000000;
-      document.getElementById("finger_size").innerHTML = Math.round((timesince(birthTimestamp) / msInYear) * increasePerYear*100000000)/100000000 + " units";
+      document.getElementById("finger_size").innerHTML = Math.round((timesince(birthTimestamp) / msInYear) * increasePerYear*1000000)/1000000 + " units";
     }
     updateAge();
     updateFingerSize();
