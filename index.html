@@ -15,9 +15,8 @@
   <body>
     <div class="container">
 
-      <!-- Navigation bar -->
       <nav class="tabs is-center">
-        <a href="">blog</a>
+        <a href="blog/index.html">blog</a>
         <a href="#hello">hello</a>
         <a href="#latest">latest</a>
         <a href="#about_me">about</a>
@@ -25,104 +24,117 @@
       </nav>
 
       <!-- Hello! -->
-      <section id="hello" class="is-full-screen is-center text-justify">
-        <div class="row is-center text-center">
-          <div class="col">
-            <h3 class="text-center">I'm Caden Miller and I like to code and listen to music sometimes. Preferably, applications programming.</h3>
+      <section id="hello" class="is-full-screen is-center">
+
+          <div class="row is-center text-center">
+            <div class="col">
+              <h3 class="is-center text-justify">I'm Caden Miller and I like to code and listen to music sometimes. Preferably, applications programming.</h3>
+
+            </div>
+            <div class="col">
+              <img class="is-rounded" src="./image/profile.jpeg" alt="A picture of me.">
+              <p class="tag text-justify text-center" data-target-resolver></p>
+            </div>
           </div>
-          <div class="col">
-            <img class="is-rounded" src="./image/profile.jpeg" alt="A picture of me.">
-            <p class="text-lowercase tag is-small text-justify text-center">Thats me.</p>       
+
+          <div class="row">
+            <div class="col">
+              <div style="position: relative; border: dotted red 1px;">
+                
+              </div>
+            </div>
+          </div>
+
+      </section>
+      <section id="latest" class="is-full-screen is-center">
+        <div class="text-center">
+          <h1>latest</h1>
+        
+          <div class="row">
+            <div class="col">
+              <img id="spotify_artwork" class="card" style="padding: 0;" src="image/record.png">
+            </div>
+            <!-- Spotify Info -->
+            <div class="col">
+              <p class = text-center>
+                <span id="spotify_status" class="tag">Currently</span><br> Listening to:<br> <span id="spotify_track" class="tag">SONG</span><br> by <br><span id="spotify_artist" class="tag">ARTIST</span>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <h3>Working on</h3>
+              <p>
+                  College<br>
+                  C++ Projects (bluemetal engine)<br>
+                  This Website<br>
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- About Me -->
+      <section id="about_me" class="is-full-screen is-center">
+        <div class="text-center">
+          <h1>about me</h1>
+          <p>
+            Age: <span id="age" class="tag">AGE</span><br>
+            Depreciation: <span  id="molecular_decomposition" class="tag">MOLECULAR_DECOMPOSITION</span>
+          </p>
+          <div class="row">
+            <div class="col">
+              <h3>Education</h3>
+              <p>
+                <h4>Middle School and Highschool</h4>
+                Gateway Regional High School<br>(2016-2018 MS, 2018-2022 HS)<br>
+                Gloucester County Institute of Technology<br> (2018-2020 HS)
+                <h4>College</h4>
+                Rowan College of South Jersey<br>(2022-present)<br>For Computer Programming
+              </p>
+            </div>
+            <div class="col">
+              <h3>Technologies</h3>
+              <p>
+                <h4>Languages</h4>
+                C (89,99)<br>
+                C++ (11,14,17)<br>
+                C# (from Unity Engine)<br>
+                Web: HTML, CSS, Javascript<br>
+                <h4>Engines and Software</h4>
+                Unreal Engine<br>
+                Unity Engine<br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact Me -->
+      <section id="contact" class="is-full-screen is-center">
+        <div class="text-center">
+          <h1>contact me</h1>
+          <p>
+            📧 email: <a class="secondary" onclick="">me@cademiller.dev</a><br>
+            ⌨️ github: <a class="secondary" href="https://github.com/cadenmiller">https://github.com/cadenmiller</a><br>
+            📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.jpeg">https://instagram.com/cadenmiller.jpeg</a><br>
+            🆒 discord: <a class="secondary" onclick="copyTextToClipboard('cullvox#3452')">cullvox#3452 (click copy)</a><br>
+            🔮 mastodon: <a rel="me" href="https://mastodon.online/@cullvox">https://mastodon.online/@cullvox</a><br>
+            🧑‍💼 linked in: <a class="secondary" href="https://linkedin.com/in/cadenmiller">https://linkedin.com/in/cadenmiller</a><br>
+          </p>
+        </div>
+      </section>
+
     </div>
-
-    <section id="latest" class="is-full-screen is-center">
-      <div class="text-center">
-        <h1>latest</h1>
-      
-        <div class="row">
-          <div class="col">
-            <img id="spotify_artwork" class="card" style="padding: 0;" src="image/record.png">
-          </div>
-          <!-- Spotify Info -->
-          <div class="col">
-            <p class = text-center>
-              <span id="spotify_status" class="tag">Currently</span><br> Listening to:<br> <span id="spotify_track" class="tag">SONG</span><br> by <br><span id="spotify_artist" class="tag">ARTIST</span>
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col text-center">
-            <h3>Working on</h3>
-            <p>
-                My college work<br>
-                My Rust programming skills<br>
-                This website<br>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Me -->
-    <section id="about_me" class="is-full-screen is-center">
-      <div class="text-center">
-        <h1>about me</h1>
-        <p>
-          Age: <span id="age" class="tag">AGE</span><br>
-          Depreciation: <span  id="molecular_decomposition" class="tag">MOLECULAR_DECOMPOSITION</span>
-        </p>
-        <div class="row">
-          <div class="col">
-            <h3>Education</h3>
-            <p>
-              <h4>Middle School and Highschool</h4>
-              Gateway Regional High School<br>(2016-2018 MS, 2018-2022 HS)<br>
-              Gloucester County Institute of Technology<br> (2018-2020 HS)
-              <h4>Higher Education</h4>
-              Rowan College of South Jersey<br>(2022-present)<br>For Computer Programming
-            </p>
-          </div>
-          <div class="col">
-            <h3>Technologies</h3>
-            <p>
-              <h4>Languages</h4>
-              C (89,99)<br>
-              C++ (11,14,17)<br>
-              C# (from Unity Engine)<br>
-              Web: HTML, CSS, Javascript<br>
-              <h4>Engines and Software</h4>
-              Unreal Engine<br>
-              Unity Engine<br>
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Contact Me -->
-    <section id="contact" class="is-full-screen is-center">
-      <div class="text-center">
-        <h1>contact me</h1>
-        <p>
-          📧 email: <a class="secondary" onclick="">me@cademiller.dev</a><br>
-          ⌨️ github: <a class="secondary" href="https://github.com/cadenmiller">https://github.com/cadenmiller</a><br>
-          📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.jpeg">https://instagram.com/cadenmiller.jpeg</a><br>
-          🆒 discord: <a class="secondary" onclick="copyTextToClipboard('cullvox#3452')">cullvox#3452 (click copy)</a><br>
-          🔮 mastodon: <a rel="me" href="https://mastodon.online/@cullvox">https://mastodon.online/@cullvox</a><br>
-          🧑‍💼 linked in: <a class="secondary" href="https://linkedin.com/in/cadenmiller">https://linkedin.com/in/cadenmiller</a><br>
-        </p>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer class="text-center">
       <p class="tag is-small">The content on this website is licensed under the <b>MIT License</b>. Find the source code <a href="https://github.com/cadenmiller/cadenmiller.dev">here!</a></p>
       <p class="tag is-small">This website does not profile you.</p>
     </footer>
+
+
 
   </body>
 </html>
@@ -158,6 +170,54 @@
   li {
     list-style-type: none;
   }
+
+  .blink-text-menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+
+  li {
+    a {
+      position: relative;
+      display: flex;
+      padding: 6px;
+      color: white;
+      font-family: Lato, sans-serif;
+      text-decoration: none;
+
+      span {
+        position: relative;
+        overflow: hidden;
+        transition: 0.6s;
+
+        .out {
+          display: inline-flex;
+        }
+
+        .in {
+          position: absolute;
+          left: 0;
+          opacity: 0;
+          transform: translateX(100%);
+        }
+      }
+
+      &:hover {
+        span {
+          .out {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+
+          .in {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 
 <!-- Some simple embedded javascript into this html -->
@@ -233,4 +293,111 @@
     setInterval(updateMolecularDecomposition, 100);
   });
 
+const resolver = {
+  resolve: function resolve(options, callback) {
+    // The string to resolve
+    const resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
+    const combinedOptions = Object.assign({}, options, {resolveString: resolveString});
+    
+    function getRandomInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+    
+    function randomCharacter(characters) {
+      return characters[getRandomInteger(0, characters.length - 1)];
+    };
+    
+    function doRandomiserEffect(options, callback) {
+      const characters = options.characters;
+      const timeout = options.timeout;
+      const element = options.element;
+      const partialString = options.partialString;
+
+      let iterations = options.iterations;
+
+      setTimeout(() => {
+        if (iterations >= 0) {
+          const nextOptions = Object.assign({}, options, {iterations: iterations - 1});
+
+          // Ensures partialString without the random character as the final state.
+          if (iterations === 0) {
+            element.textContent = partialString;
+          } else {
+            // Replaces the last character of partialString with a random character
+            element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
+          }
+
+          doRandomiserEffect(nextOptions, callback)
+        } else if (typeof callback === "function") {
+          callback(); 
+        }
+      }, options.timeout);
+    };
+    
+    function doResolverEffect(options, callback) {
+      const resolveString = options.resolveString;
+      const characters = options.characters;
+      const offset = options.offset;
+      const partialString = resolveString.substring(0, offset);
+      const combinedOptions = Object.assign({}, options, {partialString: partialString});
+
+      doRandomiserEffect(combinedOptions, () => {
+        const nextOptions = Object.assign({}, options, {offset: offset + 1});
+
+        if (offset <= resolveString.length) {
+          doResolverEffect(nextOptions, callback);
+        } else if (typeof callback === "function") {
+          callback();
+        }
+      });
+    };
+
+    doResolverEffect(combinedOptions, callback);
+  } 
+}
+
+  /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
+  * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
+  */
+  const strings = [
+    'Thats me.',
+    'Building the future!',
+    'My favorite game is Minecraft.',
+    'Who are you?',
+    '......'
+  ];
+
+  let counter = 0;
+
+  const options = {
+    // Initial position
+    offset: 0,
+    // Timeout between each random character
+    timeout: 0,
+    // Number of random characters to show
+    iterations: 10,
+    // Random characters to pick from
+    characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '=', 'Ა', 'Ბ', 'Გ', 'Დ', 'Ე', 'Ვ', 'Ზ', 'Თ', 'Ი', 'Კ', 'Ლ', 'Მ', 'Ნ', 'Ო', 'Პ', 'Ჟ', 'Რ', 'Ს', 'Ტ', 'Უ', 'Ფ', 'Ქ', 'Ღ', 'Ყ', 'Შ', 'Ჩ', 'Ც', 'Ძ', 'Წ', 'Ჭ', 'Ხ', 'Ჯ', 'Ჰ', 'Ჱ', 'Ჲ', 'Ჳ', 'Ჴ', 'Ჵ', 'Ჶ', 'Ჷ', 'Ჸ', 'Ჹ', 'Ჺ'],
+    // String to resolve
+    resolveString: strings[counter],
+    // The element
+    element: document.querySelector('[data-target-resolver]')
+  }
+
+  // Callback function when resolve completes
+  function callback() {
+    setTimeout(() => {
+      counter ++;
+      
+      if (counter >= strings.length) {
+        counter = 0;
+      }
+      
+      let nextOptions = Object.assign({}, options, {resolveString: strings[counter]});
+      resolver.resolve(nextOptions, callback);
+    }, 1000);
+  }
+
+  resolver.resolve(options, callback);
 </script>
+
