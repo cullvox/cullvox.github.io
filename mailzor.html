@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+  <!-- Header -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Caden Miller</title>
+    <link rel="stylesheet" href="css/chota.min.css">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/js.min.js"></script>
+  </head>
+
+  <!-- The websites body -->
+  <body>
+    <div class="container">
+      <h2>Mailzor</h2>
+      <h5>Last Updated: 8/21/2023</h4>
+      
+      <h3>Description</h3>
+      <p>
+        Mailzor is a simple REST library used by my friends and I to send emails.<br>
+        Feel free to use this API for free but don't use it too much or too often.
+      </p>
+      
+      <h3>Usage</h3>
+      <small>How do I use this API?</small>
+      <p>
+        To use Mailzor there are a few simple REST API commands.
+      </p>
+
+      <blockquote>
+        <h2><b>POST</b>  /send</h2>
+        <p>
+          Send a message to an email. 
+        </p>
+
+        <b>magic</b>
+        <p>Use a magic value of your choice to act as a basic security measure for your instance.</p>
+        
+        <b>from</b>
+        <p>Who is this email from, can be a name or other identifier of a person.</p>
+        
+        <b>subject</b>
+        <p>The subject line of this email.</p>
+
+        <b>message</b>
+        <p>The content of this email, can only be text data.</p>
+
+        <h4>Example</h4>
+        <pre><code class="language-js bg-light">
+const request = new XMLHttpRequest();
+const url = 'https://localhost:3000/about';
+request.open("POST", url);
+request.setRequestHeader('Content-Type', 'application/json')
+
+const email = {
+  magic: "MAILZOR",
+  from: "example@example.com",
+  subject: "Important Email",
+  message: "I wanted to send this important email."
+};
+
+request.send(JSON.stringify(email));
+        </code></pre>
+      </blockquote>
+
+      <blockquote>
+        <h2><b>GET</b> /about</h2>
+        <p>
+          The about command is used to give some simple info about Mailzor.<br>
+          You probably won't be using this command too often.
+        </p>
+        <h4>Example</h4>
+        <pre><code class="language-js bg-light">
+const request = new XMLHttpRequest();
+const url = 'https://localhost:3000/about';
+request.open("GET", url);
+
+request.send();
+
+request.onload = (e) => {
+  console.log(request.response);
+};
+        </code></pre>
+
+      </blockquote>
+
+
+      <blockquote>
+        <h2><b>GET</b> /status</h2>
+        <p>
+          Gets the status of the Mailzor.<br>
+          If the server is up it always returns: <pre><code class="language-js bg-light">{ Status: "Running" }</code></pre>
+        </p>
+        <h4>Example</h4>
+        <pre><code class="language-js bg-light">
+const request = new XMLHttpRequest();
+const url = 'https://localhost:3000/about';
+request.open("GET", url);
+
+request.send();
+
+request.onload = (e) => {
+  console.log(request.response);
+};
+        </code></pre>
+
+      </blockquote>
+
+    </div>
+  </body>
+</html>
+
+<script>hljs.highlightAll();</script>
