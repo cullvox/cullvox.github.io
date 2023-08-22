@@ -122,14 +122,17 @@ request.onload = (e) => {
 
 <script>hljs.highlightAll();</script>
 <script>
-  const request = new XMLHttpRequest();
-  const url = 'https://mailzor.cadenmiller.dev/status';
-  request.open("GET", url);
 
-  request.send();
+  jQuery(document).ready(function(){
+    const request = new XMLHttpRequest();
+    const url = 'https://mailzor.cadenmiller.dev/status';
+    request.open("GET", url);
 
-  request.onload = (e) => {
-    document.getElementById("status").textContent = request.response.stringify();
-    console.log(request.response);
-  };
+    request.send();
+
+    request.onload = (e) => {
+      document.getElementById("status").textContent = request.response.stringify();
+      console.log(request.response);
+    };
+  });
 </script>
