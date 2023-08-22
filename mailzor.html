@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <h2>Mailzor</h2>
-      <h3 id="status">Status: STATUS</h3>
+      <p class="tag is-small" id="status"></p>
       <h5>Last Updated: 8/21/2023</h4>
       
       <h3>Description</h3>
@@ -33,7 +33,7 @@
       </p>
 
       <blockquote>
-        <h2><b>POST</b>  /send</h2>
+        <h2><b>POST</b> /send</h2>
         <p>
           Send a message to an email. 
         </p>
@@ -132,9 +132,9 @@ request.onload = (e) => {
       request.send();
 
       request.onload = (e) => {
-      document.getElementById("status").textContent = "Current Status: " + JSON.stringify(request.response);
-      console.log(request.response);
-    };
+        document.getElementById("status").textContent = "Current Status: <" + JSON.parse(request.response).Status + ">";
+        console.log(request.response);
+      };
   });
 
 </script>
