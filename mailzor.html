@@ -132,7 +132,7 @@ request.onload = (e) => {
       request.send();
 
       request.onload = (e) => {
-      document.getElementById("status").textContent = request.response.stringify();
+      document.getElementById("status").textContent = JSON.stringify(request.response);
       console.log(request.response);
     };
   });
