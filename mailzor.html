@@ -19,6 +19,7 @@
   <body>
     <div class="container">
       <h2>Mailzor</h2>
+      <h3 id="status">Status: STATUS</h3>
       <h5>Last Updated: 8/21/2023</h4>
       
       <h3>Description</h3>
@@ -45,6 +46,9 @@
         <b>from</b>
         <p>Who is this email from, can be a name or other identifier of a person.</p>
         
+        <b>to</b>
+        <p>Who to send this email to, supports multiple recipients.</p>
+
         <b>subject</b>
         <p>The subject line of this email.</p>
 
@@ -61,12 +65,13 @@ request.setRequestHeader('Content-Type', 'application/json')
 const email = {
   magic: "MAILZOR",
   from: "example@example.com",
+  to: "yourself@exampler.com someone@example.com"
   subject: "Important Email",
   message: "I wanted to send this important email."
 };
 
 request.send(JSON.stringify(email));
-        </code></pre>
+        </code></pre>      
       </blockquote>
 
       <blockquote>
@@ -87,7 +92,7 @@ request.onload = (e) => {
   console.log(request.response);
 };
         </code></pre>
-
+        <a class="button primary" href="https://mailzor.cadenmiller.dev/about">Try This Command</a>
       </blockquote>
 
 
@@ -100,7 +105,7 @@ request.onload = (e) => {
         <h4>Example</h4>
         <pre><code class="language-js bg-light">
 const request = new XMLHttpRequest();
-const url = 'https://localhost:3000/about';
+const url = 'https://localhost:3000/status';
 request.open("GET", url);
 
 request.send();
@@ -109,6 +114,7 @@ request.onload = (e) => {
   console.log(request.response);
 };
         </code></pre>
+        <a class="button primary" href="https://mailzor.cadenmiller.dev/status">Try This Command</a>
 
       </blockquote>
 
@@ -117,3 +123,15 @@ request.onload = (e) => {
 </html>
 
 <script>hljs.highlightAll();</script>
+<script>
+  const request = new XMLHttpRequest();
+  const url = 'https://mailzor.cadenmiller.dev/status';
+  request.open("GET", url);
+
+  request.send();
+
+  request.onload = (e) => {
+    document.getElementById("status").textContent = request.response.stringify();
+    console.log(request.response);
+  };
+</script>
