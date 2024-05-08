@@ -24,15 +24,22 @@
       </nav>
 
       <!-- Hello! -->
-      <section id="hello" class="is-full-screen is-center">
 
-          <div class="row is-center text-center">
+      <section id="hello" class="is-full-screen is-center">
+          <div class="row">
             <div class="col">
+  
+              
+              <div id="status" class="pop is-center" style="min-height: 200px;" data-target-resolver>TEXT</div>
+              
               <hgroup>
-                <h3 class="is-center text-justify">I'm Caden Miller and I like to program, listen to and make music sometimes.</h3>
-                <h3 class="text-justify"><b>Mostly, creative.</b></h3>
+                <h1 class="is-center text-justify">I'm Caden Miller and I like to program, listen to and make music sometimes.</h3>
+                <h2 class="text-justify"><b>Mostly, creative.</b></h3>
               </hgroup>
+
+              
               <h4 class="text-justify">scroll for more</h4>
+
 
             </div>
           </div>
@@ -78,10 +85,6 @@
       <section id="about_me" class="is-full-screen is-center">
         <div class="text-center">
           <h1>about me</h1>
-          <p>
-            Age: <span id="age" class="tag">AGE</span><br>
-            Depreciation: <span  id="molecular_decomposition" class="tag">MOLECULAR_DECOMPOSITION</span>
-          </p>
           <div class="row">
             <div class="col">
               <h3>Education</h3>
@@ -116,10 +119,10 @@
         <div class="text-center">
           <h1>contact me</h1>
           <p>
-            📧 email: <a class="secondary" onclick="">me@cademiller.dev</a><br>
-            ⌨️ github: <a class="secondary" href="https://github.com/cadenmiller">https://github.com/cadenmiller</a><br>
-            📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.jpeg">https://instagram.com/cadenmiller.jpeg</a><br>
-            🆒 discord: <a class="secondary" onclick="copyTextToClipboard('cullvox#3452')">cullvox#3452 (click copy)</a><br>
+            📧 email: <a class="secondary" onclick="">me@cadenmiller.dev</a><br>
+            ⌨️ github: <a class="secondary" href="https://github.com/cullvox">https://github.com/cullvox</a><br>
+            📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.zip">https://instagram.com/cadenmiller.zip</a><br>
+            🆒 discord: <a class="secondary" onclick="copyTextToClipboard('cullvox')">cullvox (click copy)</a><br>
             🔮 mastodon: <a rel="me" href="https://mastodon.online/@cullvox">https://mastodon.online/@cullvox</a><br>
             🧑‍💼 linked in: <a class="secondary" href="https://linkedin.com/in/cadenmiller">https://linkedin.com/in/cadenmiller</a><br>
           </p>
@@ -133,9 +136,6 @@
       <p class="tag is-small">The content on this website is licensed under the <b>MIT License</b>. Find the source code <a href="https://github.com/cadenmiller/cadenmiller.dev">here!</a></p>
       <p class="tag is-small">This website does not profile you.</p>
     </footer>
-
-
-
   </body>
 </html>
 
@@ -218,6 +218,51 @@
     }
   }
 }
+
+#status {
+    color: #f3e700;
+    font-size: 1.5em;
+    font-family:'minecraftfont';
+    text-shadow:3px 3px #3F3F00;
+    padding: 40px;
+    position: relative;
+    text-align: center;
+}
+.pop {
+    animation: pop 0.58s infinite;
+    -webkit-animation: pop 0.58s infinite;
+}
+@keyframes pop {
+    from {
+        transform:scale(0.95)
+    }
+    50% {
+        transform:scale(1)
+    }
+    to {
+        transform:scale(0.95)
+    }
+}
+@-webkit-keyframes pop {
+    from {
+        -webkit-transform:scale(0.95)
+    }
+    50% {
+        -webkit-transform:scale(1)
+    }
+    to {
+        -webkit-transform:scale(0.95)
+    }
+}
+.tilt {
+    /* -ms-transform: rotate(25deg); */
+    /* -webkit-transform: rotate(25deg); */
+    /* transform: rotate(25deg); */
+}
+@font-face {
+    font-family:'minecraftfont';
+    src: url('font/MinecraftBoldItalic.otf');
+}
 </style>
 
 <!-- Some simple embedded javascript into this html -->
@@ -231,32 +276,6 @@
     } catch (err) {
       alert('Error in copying text: ', err);
     }
-  }
-
-  const birthTimestamp = 1082540100000;
-  const molecularDecompositionTimestamp = 3449295300000;
-  const msInYear = 31557600000;
-
-  function timesince(timestamp) {
-      const date = new Date();
-      const nowTimestamp = date.getTime();
-      return nowTimestamp - timestamp;
-  }
-
-  function timeuntil(timestamp) {
-    const date = new Date();
-    const nowTimestamp = date.getTime();
-    return timestamp - nowTimestamp;
-  }
-
-  function updateAge() {
-    const date = new Date();
-    document.getElementById("age").innerHTML = timesince(birthTimestamp) / msInYear + " years";
-  }
-  
-  function updateMolecularDecomposition() {
-    const date = new Date();
-    document.getElementById("molecular_decomposition").innerHTML = timeuntil(molecularDecompositionTimestamp) / msInYear + " years";
   }
 
   function updateSpotifyInfo() {
@@ -285,12 +304,7 @@
   }
 
   $(document).ready(function() {    
-    updateAge();
-    updateMolecularDecomposition();
     updateSpotifyInfo();
-
-    setInterval(updateAge, 100);
-    setInterval(updateMolecularDecomposition, 100);
   });
 
 const resolver = {
@@ -356,48 +370,80 @@ const resolver = {
   } 
 }
 
-  /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
-  * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
-  */
-  const strings = [
-    'Thats me.',
-    'Building the future!',
-    'My favorite game is Minecraft.',
-    'Who are you?',
-    '......'
-  ];
+const strings = [
 
-  let counter = 0;
+  // Funnies
+  'Just keep swimming...',
+  'Unexpected things happen all the time!',
+  '2014 is only three months away!',
+  'Sometimes I dream.',
 
-  const options = {
-    // Initial position
-    offset: 0,
-    // Timeout between each random character
-    timeout: 0,
-    // Number of random characters to show
-    iterations: 10,
-    // Random characters to pick from
-    characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '=', 'Ა', 'Ბ', 'Გ', 'Დ', 'Ე', 'Ვ', 'Ზ', 'Თ', 'Ი', 'Კ', 'Ლ', 'Მ', 'Ნ', 'Ო', 'Პ', 'Ჟ', 'Რ', 'Ს', 'Ტ', 'Უ', 'Ფ', 'Ქ', 'Ღ', 'Ყ', 'Შ', 'Ჩ', 'Ც', 'Ძ', 'Წ', 'Ჭ', 'Ხ', 'Ჯ', 'Ჰ', 'Ჱ', 'Ჲ', 'Ჳ', 'Ჴ', 'Ჵ', 'Ჶ', 'Ჷ', 'Ჸ', 'Ჹ', 'Ჺ'],
-    // String to resolve
-    resolveString: strings[counter],
-    // The element
-    element: document.querySelector('[data-target-resolver]')
-  }
+  // Nice things
+  'Let\'s build the future!',
+  'The fact that you\'re here means you are a cool person!',
+  'I like that you exist, probably.',
+  'In a couple years this will all change!',
 
-  // Callback function when resolve completes
-  function callback() {
-    setTimeout(() => {
-      counter ++;
-      
-      if (counter >= strings.length) {
-        counter = 0;
-      }
-      
-      let nextOptions = Object.assign({}, options, {resolveString: strings[counter]});
-      resolver.resolve(nextOptions, callback);
-    }, 1000);
-  }
+  // Check out!
+  'Check out Minecraft!',
+  'Check out Interstellar!',
+  'Check out John Green!',
+  'Check out Hank Green!',
+  'Check out my friends!',
+  'Check out your mind!',
+  'Check out Scrubs!',
+  
+  // Made
+  'Made in HTML.',
+  'Made with love.',
+  'Made for you.',
+  'Made in a lab.',
+  'Made by a fox.',
+  'Made next to a tree.',
+  'Made by natural causes.',
 
-  resolver.resolve(options, callback);
+  // Friend quotes
+  'You miss the shots you don\'t aim!',
+  'Grammer izn\'t reel.',
+  'Ok i\'m done.',
+  'Technically all doors open both ways.',
+  'WHYYYYYYYYYY!',
+  'Anything is possible!',
+
+  // Existential things
+  '......',
+  'How much longer?',
+  'What\'s going on right now?',
+  'In a couple years you will be completely different!',
+  'READ ME! READ ME! READ ME! READ ME!',
+  'Chances are, no one will read this...'
+];
+
+const options = {
+  // Initial position
+  offset: 0,
+  // Timeout between each random character
+  timeout: 0.004,
+  // Number of random characters to show
+  iterations: 10,
+  // Random characters to pick from
+  characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '=', 'Ა', 'Ბ', 'Გ', 'Დ', 'Ე', 'Ვ', 'Ზ', 'Თ', 'Ი', 'Კ', 'Ლ', 'Მ', 'Ნ', 'Ო', 'Პ', 'Ჟ', 'Რ', 'Ს', 'Ტ', 'Უ', 'Ფ', 'Ქ', 'Ღ', 'Ყ', 'Შ', 'Ჩ', 'Ც', 'Ძ', 'Წ', 'Ჭ', 'Ხ', 'Ჯ', 'Ჰ', 'Ჱ', 'Ჲ', 'Ჳ', 'Ჴ', 'Ჵ', 'Ჶ', 'Ჷ', 'Ჸ', 'Ჹ', 'Ჺ'],
+  // String to resolve
+  resolveString: strings[Math.floor(Math.random() * strings.length)],
+  // The element
+  element: document.querySelector('[data-target-resolver]')
+}
+
+// Callback function when resolve completes
+function callback() {
+  setTimeout(() => {
+    const random = Math.floor(Math.random() * strings.length);
+
+    let nextOptions = Object.assign({}, options, {resolveString: strings[random]});
+    resolver.resolve(nextOptions, callback);
+  }, 1000);
+}
+
+resolver.resolve(options, callback);
 </script>
 
