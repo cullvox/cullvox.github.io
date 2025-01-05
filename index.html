@@ -7,52 +7,67 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Caden Miller</title>
-    <link rel="stylesheet" href="css/chota.min.css">
-    <script src="js/jquery-3.6.1.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <!-- The websites body -->
   <body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="container">
 
-      <nav class="tabs is-center">
-        <a href="blog/index.html">blog</a>
-        <a href="#hello">hello</a>
-        <a href="#latest">latest</a>
-        <a href="#about_me">about</a>
-        <a href="#contact">contact</a>
-      </nav>
+      
+
+      <ul class="nav nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active rounded-5 text-dark" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5 text-dark" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5 text-dark" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+        </li>
+      </ul>
+      
 
       <!-- Hello! -->
+      <div class="container-fluid">
+        <section id="hello" class="text-center">
+          <img src="image/profile_small.jpg" class="img-responsive center-block profile-img rounded-circle shadow-4-strong">
+          <hgroup>
+            <h1 class="is-center text-justify"><b>Caden Miller</b>
+            <h3><span class="boujee-text" style="font-weight: 900;">maker of things</span></h3>
+          </hgroup>
+        </section>
 
-      <section id="hello" class="is-full-screen is-center">
-          <div class="row">
-            <div class="col">
-  
-              
-              <div id="status" class="pop is-center" style="min-height: 200px;" data-target-resolver>TEXT</div>
-              
-              <hgroup>
-                <h1 class="is-center text-justify">I'm Caden Miller and I like to program, listen to and make music sometimes.</h3>
-                <h2 class="text-justify"><b>Mostly, creative.</b></h3>
-              </hgroup>
-
-              
-              <h4 class="text-justify">scroll for more</h4>
-
-
+        <div class="row">
+          <div class="col card me-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col">
-              <div style="position: relative; border: dotted red 1px;">
-                
-              </div>
+          <div class="col card me-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
             </div>
           </div>
+        </div>
+      </div>
 
-      </section>
       <section id="latest" class="is-full-screen is-center">
         <div class="text-center">
           <h1>latest</h1>
