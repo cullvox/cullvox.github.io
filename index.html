@@ -18,54 +18,97 @@
   <body>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a1c7fcf334.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav fa-lg">
+            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/cullvox.dev"><i class="fab fa-bluesky"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-youtube"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/cullvox"><i class="fab fa-github"></i></a></li>
+          </ul>
 
-      
-
-      <ul class="nav nav-fill gap-2 p-1 small shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active rounded-5 text-dark" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link rounded-5 text-dark" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link rounded-5 text-dark" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
-        </li>
-      </ul>
-      
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+              </li>
+          </ul>
+      </nav>
+    </div>
 
       <!-- Hello! -->
-      <div class="container-fluid">
-        <section id="hello" class="text-center">
-          <img src="image/profile_small.jpg" class="img-responsive center-block profile-img rounded-circle shadow-4-strong">
-          <hgroup>
-            <h1 class="is-center text-justify"><b>Caden Miller</b>
-            <h3><span class="boujee-text" style="font-weight: 900;">maker of things</span></h3>
-          </hgroup>
+      <div class="container-fluid text-start">
+        <section id="hello" class="text-center mb-5 pb-5">
+          <div class="container">
+            <img src="image/furry_orange_bg_small.png" class="img-responsive center-block profile-img rounded-circle shadow-lg mb-5">
+            <hgroup>
+              <h1 class="is-center text-justify"><b>Caden Miller</b>
+              <h3><span class="boujee-text" style="font-weight: 900;">maker of things</span></h3>
+            </hgroup>
+          </div>
         </section>
 
-        <div class="row">
-          <div class="col card me-4" style="width: 18rem;">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 p-2 justify-content-center">
+          <div class="col card p-0 m-2" style="width: 18rem;" data-tilt data-tilt-max="5">
+            <img src="image/programming.png" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <h4 class="card-title"><i class="fa-solid fa-sm fa-code"></i> Programming</h4>
+              <h6 class="card-subtitle mb-2 text-muted">a multi-discipline sport.</h6>
+              
+              <p class="card-text pt-3">I make lots of programming projects, it's my favorite pass time. Click on the Github link for learn more.</p>
+              <a class="card-link" href="https://github.com/cullvox"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="col card p-0 m-2" style="width: 18rem;" data-tilt data-tilt-max="5">
+            <img src="image/game_development.png" class="card-img-top img-fluid" alt="A screenshot of Godot editor.">
+            <div class="card-body">
+              <h4 class="card-title"><i class="fa-solid fa-sm fa-gamepad"></i> Game Development</h4>
+              <h6 class="card-subtitle mb-2 text-muted">is one of my passions.</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
               <a href="#" class="card-link">Another link</a>
             </div>
           </div>
 
-          <div class="col card me-4" style="width: 18rem;">
+          <div class="col card p-0 m-2" style="width: 18rem;" data-tilt data-tilt-max="5">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h4 class="card-title"><i class="fa-solid fa-sm fa-music"></i> Music</h4>
+              <h6 class="card-subtitle mb-2 text-muted">calms my soul.</h6>
+              <p class="card-text">There are times when I am inclined to produce music from my soul and express it upon the world. I leave it there, it will stand in time.</p>
               <a href="#" class="card-link">Card link</a>
               <a href="#" class="card-link">Another link</a>
             </div>
           </div>
+
+          <div class="col card p-0 m-2" style="width: 18rem;" data-tilt data-tilt-max="5">
+            <div class="card-body">
+              <h4 class="card-title"><i class="fa-solid fa-sm fa-brands fa-spotify" ></i> Listening To</h4>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">might be interesting to you...</h6> -->
+
+              <p class="card-text text-start" id="spotify_description">Song here... (You shouldn't see this)</p>
+            </div>
+            <img src="image/record.png.png" class="card-img-bottom img-fluid" id="spotify_artwork" alt="Album art.">
+          </div>
         </div>
+
+        <div class="row text-start">
+
+        </div>
+
+      </div>
+  </div>
       </div>
 
       <section id="latest" class="is-full-screen is-center">
@@ -143,319 +186,47 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer class="text-center">
-      <p class="tag is-small">The content on this website is licensed under the <b>MIT License</b>. Find the source code <a href="https://github.com/cadenmiller/cadenmiller.dev">here!</a></p>
-      <p class="tag is-small">This website does not profile you.</p>
-    </footer>
+
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+
   </body>
 </html>
 
 <!-- Some customization to chota -->
 <style>
-  :root {
-    --bg-color: #ffffff;
-    --bg-secondary-color: #f3f3f6;
-    --color-primary: #14854F;
-    --color-lightGrey: #d2d6dd;
-    --color-grey: #747681;
-    --color-darkGrey: #3f4144;
-    --color-error: #d43939;
-    --color-success: #28bd14;
-    --grid-maxWidth: 120rem;
-    --grid-gutter: 2rem;
-    --font-size: 1.6rem;
-    --font-color: #333333;
-    --font-family-sans: sans-serif;
-    --font-family-mono: "Avenir Next","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  .card { 
+    width: 18rem;
   }
-  .container {
-    max-width: 720px;
-  }
-  body > footer {
-    background-color: #fafafa;
-    padding: 4rem;
-  }
-  .container{
-    padding: 4rem;
-  }
-  li {
-    list-style-type: none;
-  }
-
-  .blink-text-menu {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-
-  li {
-    a {
-      position: relative;
-      display: flex;
-      padding: 6px;
-      color: white;
-      font-family: Lato, sans-serif;
-      text-decoration: none;
-
-      span {
-        position: relative;
-        overflow: hidden;
-        transition: 0.6s;
-
-        .out {
-          display: inline-flex;
-        }
-
-        .in {
-          position: absolute;
-          left: 0;
-          opacity: 0;
-          transform: translateX(100%);
-        }
-      }
-
-      &:hover {
-        span {
-          .out {
-            opacity: 0;
-            transform: translateX(-100%);
-          }
-
-          .in {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      }
-    }
-  }
-}
-
-#status {
-    color: #f3e700;
-    font-size: 1.5em;
-    font-family:'minecraftfont';
-    text-shadow:3px 3px #3F3F00;
-    padding: 40px;
-    position: relative;
-    text-align: center;
-}
-.pop {
-    animation: pop 0.58s infinite;
-    -webkit-animation: pop 0.58s infinite;
-}
-@keyframes pop {
-    from {
-        transform:scale(0.95)
-    }
-    50% {
-        transform:scale(1)
-    }
-    to {
-        transform:scale(0.95)
-    }
-}
-@-webkit-keyframes pop {
-    from {
-        -webkit-transform:scale(0.95)
-    }
-    50% {
-        -webkit-transform:scale(1)
-    }
-    to {
-        -webkit-transform:scale(0.95)
-    }
-}
-.tilt {
-    /* -ms-transform: rotate(25deg); */
-    /* -webkit-transform: rotate(25deg); */
-    /* transform: rotate(25deg); */
-}
-@font-face {
-    font-family:'minecraftfont';
-    src: url('font/MinecraftBoldItalic.otf');
-}
 </style>
 
 <!-- Some simple embedded javascript into this html -->
 <script>
 
-  /* Copies specified text to the clipboard */
-  async function copyTextToClipboard(text)
-  {
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (err) {
-      alert('Error in copying text: ', err);
-    }
-  }
-
-  function updateSpotifyInfo() {
-    $.ajax({
-      type: "GET",
-      url: "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=cullvox&api_key=c45f564449d75c246ded5f139660f530&format=json",
-      headers: {},
-      success: function(data) {
-        const artwork = data.recenttracks.track[0].image[2]["#text"];
-        const trackName = data.recenttracks.track[0].name;
-        const artistName = data.recenttracks.track[0].artist["#text"];
-        const isNowPlaying = (data.recenttracks.track[0]["@attr"]) ? data.recenttracks.track[0]["@attr"].nowplaying : false;
+function updateSpotifyInfo() {
+  $.ajax({
+    type: "GET",
+    url: "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=cullvox&api_key=c45f564449d75c246ded5f139660f530&format=json",
+    headers: {},
+    success: function(data) {
+      const artworkImage = data.recenttracks.track[0].image[3]["#text"];
+      const trackName = data.recenttracks.track[0].name;
+      const artistName = data.recenttracks.track[0].artist["#text"];
+      const isNowPlaying = (data.recenttracks.track[0]["@attr"]) ? data.recenttracks.track[0]["@attr"].nowplaying : false;
+      const url = data.recenttracks.track[0].url;
+      
+      var artwork = document.getElementById('spotify_artwork');
+      var description = document.getElementById('spotify_description');
         
-        var artworkID = document.getElementById('spotify_artwork');
-        var status = document.getElementById('spotify_status');
-        var track = document.getElementById('spotify_track');
-        var artist = document.getElementById('spotify_artist');
-          
-        artworkID.src = artwork;
-        status.textContent = (isNowPlaying) ? "Currently" : "Was"; 
-        track.textContent = trackName;
-        artist.textContent = artistName; 
-      },
-      dataType: "json"
-    });
-  }
-
-  $(document).ready(function() {    
-    updateSpotifyInfo();
+      description.innerHTML = ((isNowPlaying) ? "Listening to " : "Last played ") + "<b><a href=\"" + url +"\">" + trackName + "</a></b>" + " by " + "<span class=\"boujee-text\" style=\"font-weight: 900;\">" + artistName + "</span>";
+      artwork.src = artworkImage; 
+    },
+    dataType: "json"
   });
-
-const resolver = {
-  resolve: function resolve(options, callback) {
-    // The string to resolve
-    const resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
-    const combinedOptions = Object.assign({}, options, {resolveString: resolveString});
-    
-    function getRandomInteger(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-    
-    function randomCharacter(characters) {
-      return characters[getRandomInteger(0, characters.length - 1)];
-    };
-    
-    function doRandomiserEffect(options, callback) {
-      const characters = options.characters;
-      const timeout = options.timeout;
-      const element = options.element;
-      const partialString = options.partialString;
-
-      let iterations = options.iterations;
-
-      setTimeout(() => {
-        if (iterations >= 0) {
-          const nextOptions = Object.assign({}, options, {iterations: iterations - 1});
-
-          // Ensures partialString without the random character as the final state.
-          if (iterations === 0) {
-            element.textContent = partialString;
-          } else {
-            // Replaces the last character of partialString with a random character
-            element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
-          }
-
-          doRandomiserEffect(nextOptions, callback)
-        } else if (typeof callback === "function") {
-          callback(); 
-        }
-      }, options.timeout);
-    };
-    
-    function doResolverEffect(options, callback) {
-      const resolveString = options.resolveString;
-      const characters = options.characters;
-      const offset = options.offset;
-      const partialString = resolveString.substring(0, offset);
-      const combinedOptions = Object.assign({}, options, {partialString: partialString});
-
-      doRandomiserEffect(combinedOptions, () => {
-        const nextOptions = Object.assign({}, options, {offset: offset + 1});
-
-        if (offset <= resolveString.length) {
-          doResolverEffect(nextOptions, callback);
-        } else if (typeof callback === "function") {
-          callback();
-        }
-      });
-    };
-
-    doResolverEffect(combinedOptions, callback);
-  } 
 }
 
-const strings = [
+$(document).ready(function() {    
+  updateSpotifyInfo();
+});
 
-  // Funnies
-  'Just keep swimming...',
-  'Unexpected things happen all the time!',
-  '2014 is only three months away!',
-  'Sometimes I dream.',
-
-  // Nice things
-  'Let\'s build the future!',
-  'The fact that you\'re here means you are a cool person!',
-  'I like that you exist, probably.',
-  'In a couple years this will all change!',
-
-  // Check out!
-  'Check out Minecraft!',
-  'Check out Interstellar!',
-  'Check out John Green!',
-  'Check out Hank Green!',
-  'Check out my friends!',
-  'Check out your mind!',
-  'Check out Scrubs!',
-  
-  // Made
-  'Made in HTML.',
-  'Made with love.',
-  'Made for you.',
-  'Made in a lab.',
-  'Made by a fox.',
-  'Made next to a tree.',
-  'Made by natural causes.',
-
-  // Friend quotes
-  'You miss the shots you don\'t aim!',
-  'Grammer izn\'t reel.',
-  'Ok i\'m done.',
-  'Technically all doors open both ways.',
-  'WHYYYYYYYYYY!',
-  'Anything is possible!',
-
-  // Existential things
-  '......',
-  'How much longer?',
-  'What\'s going on right now?',
-  'In a couple years you will be completely different!',
-  'READ ME! READ ME! READ ME! READ ME!',
-  'Chances are, no one will read this...'
-];
-
-const options = {
-  // Initial position
-  offset: 0,
-  // Timeout between each random character
-  timeout: 0.004,
-  // Number of random characters to show
-  iterations: 10,
-  // Random characters to pick from
-  characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '=', 'Ა', 'Ბ', 'Გ', 'Დ', 'Ე', 'Ვ', 'Ზ', 'Თ', 'Ი', 'Კ', 'Ლ', 'Მ', 'Ნ', 'Ო', 'Პ', 'Ჟ', 'Რ', 'Ს', 'Ტ', 'Უ', 'Ფ', 'Ქ', 'Ღ', 'Ყ', 'Შ', 'Ჩ', 'Ც', 'Ძ', 'Წ', 'Ჭ', 'Ხ', 'Ჯ', 'Ჰ', 'Ჱ', 'Ჲ', 'Ჳ', 'Ჴ', 'Ჵ', 'Ჶ', 'Ჷ', 'Ჸ', 'Ჹ', 'Ჺ'],
-  // String to resolve
-  resolveString: strings[Math.floor(Math.random() * strings.length)],
-  // The element
-  element: document.querySelector('[data-target-resolver]')
-}
-
-// Callback function when resolve completes
-function callback() {
-  setTimeout(() => {
-    const random = Math.floor(Math.random() * strings.length);
-
-    let nextOptions = Object.assign({}, options, {resolveString: strings[random]});
-    resolver.resolve(nextOptions, callback);
-  }, 1000);
-}
-
-resolver.resolve(options, callback);
 </script>
 
