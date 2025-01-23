@@ -18,7 +18,6 @@
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a1c7fcf334.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -50,7 +49,7 @@
       <div class="container-fluid text-start">
         <section id="hello" class="text-center mb-5 pb-5">
           <div class="container">
-            <img src="image/furry_orange_bg_small.png" class="img-responsive center-block profile-img rounded-circle shadow-lg mb-5">
+            <img src="image/profile_new_new.JPG" class="img-responsive center-block profile-img rounded-circle shadow-lg mb-5" data-tilt data-tilt-max="5">
             <hgroup>
               <h1 class="is-center text-justify"><b>Caden Miller</b>
               <h3><span class="boujee-text" style="font-weight: 900;">maker of things</span></h3>
@@ -91,20 +90,38 @@
             </div>
           </div>
 
-          <div class="col card p-0 m-2" style="width: 18rem;" data-tilt data-tilt-max="5">
+          <div class="col card p-0 m-2" id="listening_card" hidden="true" style="width: 18rem;" data-tilt data-tilt-max="5">
             <div class="card-body">
               <h4 class="card-title"><i class="fa-solid fa-sm fa-brands fa-spotify" ></i> Listening To</h4>
               <!-- <h6 class="card-subtitle mb-2 text-muted">might be interesting to you...</h6> -->
 
               <p class="card-text text-start" id="spotify_description">Song here... (You shouldn't see this)</p>
             </div>
-            <img src="image/record.png.png" class="card-img-bottom img-fluid" id="spotify_artwork" alt="Album art.">
+            <img src="" class="card-img-bottom img-fluid" id="spotify_artwork" alt="Album art.">
           </div>
+
+          <div class="col card p-0 m-2" id="listening_placeholder" aria-hidden="true">
+
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+              </p>
+            </div>
+            <svg class="bd-placeholder-img card-img-bottom" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid meet" focusable="false">
+              <title>Placeholder</title>
+              <rect width="150" height="150" fill="#868e96"></rect>
+            </svg>
+          </div>
+          
 
           <div class="col card p-0 m-2" style="width: 18rem;" data-tilt data-tilt-max="5">
             <img src="image/production.png" class="card-img-top img-fluid" alt="An image of me on set.">
             <div class="card-body">
-              <h4 class="card-title"><i class="fa-solid fa-sm fa-camera" ></i> Production</h4>
+              <h4 class="card-title"><i class="fa-solid fa-sm fa-video" ></i> Production</h4>
               <h6 class="card-subtitle mb-2 text-muted"><span class="text-danger"><b>red</b></span> means recording</h6>
 
               <p class="card-text">I've worked on a couple of sets.</p>
@@ -132,7 +149,7 @@
           <p>
             📧 email: <a class="secondary" onclick="">me@cadenmiller.dev</a><br>
             ⌨️ github: <a class="secondary" href="https://github.com/cullvox">https://github.com/cullvox</a><br>
-            📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.zip">https://instagram.com/cadenmiller.zip</a><br>
+            📷 instagram: <a class="secondary" href="https://instagram.com/cadenmiller.dev">https://instagram.com/cadenmiller.dev</a><br>
             🆒 discord: <a class="secondary" onclick="copyTextToClipboard('cullvox')">cullvox (click copy)</a><br>
             🔮 mastodon: <a rel="me" href="https://mastodon.online/@cullvox">https://mastodon.online/@cullvox</a><br>
             🧑‍💼 linked in: <a class="secondary" href="https://linkedin.com/in/cadenmiller">https://linkedin.com/in/cadenmiller</a><br>
@@ -159,29 +176,38 @@
 <script>
 
 function updateSpotifyInfo() {
-  $.ajax({
-    type: "GET",
-    url: "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=cullvox&api_key=c45f564449d75c246ded5f139660f530&format=json",
-    headers: {},
-    success: function(data) {
+
+  var url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=cullvox&api_key=c45f564449d75c246ded5f139660f530&format=json";
+  var ap = new XMLHttpRequest();
+  ap.open("GET", url, true);
+  ap.addEventListener("readystatechange", (event) => {
+    if (ap.readyState == 4 && ap.status == 200) {
+      var data = JSON.parse(ap.responseText);
       const artworkImage = data.recenttracks.track[0].image[3]["#text"];
       const trackName = data.recenttracks.track[0].name;
       const artistName = data.recenttracks.track[0].artist["#text"];
       const isNowPlaying = (data.recenttracks.track[0]["@attr"]) ? data.recenttracks.track[0]["@attr"].nowplaying : false;
       const url = data.recenttracks.track[0].url;
       
+      
       var artwork = document.getElementById('spotify_artwork');
       var description = document.getElementById('spotify_description');
+      var listening_card = document.getElementById('listening_card');
+      var listening_placeholder = document.getElementById('listening_placeholder');
         
       description.innerHTML = ((isNowPlaying) ? "Listening to " : "Last played ") + "<b><a href=\"" + url +"\">" + trackName + "</a></b>" + " by " + "<span class=\"boujee-text\" style=\"font-weight: 900;\">" + artistName + "</span>";
       artwork.src = artworkImage; 
-    },
-    dataType: "json"
+      listening_placeholder.hidden = true;
+      listening_card.hidden = false;
+    }
   });
+
+  ap.send();
 }
 
-$(document).ready(function() {    
-  updateSpotifyInfo();
+window.addEventListener("load", (event) => { 
+  console.log("Updating LastFM!"); 
+  updateSpotifyInfo()
 });
 
 </script>
