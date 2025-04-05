@@ -38,3 +38,11 @@
     max-width: 50%;
     height: auto;
 }
+
+.marquee {
+  width: 15em;
+  height: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1;
+}
